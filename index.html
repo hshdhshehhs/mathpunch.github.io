@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mathpunch Unblocked</title>
+    <title>ixlmathgg Unblocked</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,6 +12,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            overflow: hidden; /* Prevent scrolling */
         }
         h1 {
             margin: 20px 0;
@@ -68,84 +69,54 @@
 </head>
 <body>
 
-    <h1>mathpunch Unblocked</h1>
+    <h1>ixlmathgg Unblocked</h1>
 
-    <!-- Category Section for Games -->
     <h2>Games</h2>
     <div class="game-list">
-        <button onclick="loadGame('https://extramath.github.io/bat/')">Stickman Hook</button>
-        <button onclick="loadGame('https://extramath.github.io/doggy/')">Super Mario 64</button>
-        <button onclick="loadGame('https://extramath.github.io/bear/')">Tiny Fishing</button>
-        <button onclick="loadGame('https://extramath.github.io/snake/')">Tap Tap Shots</button>
-        <button onclick="loadGame('https://extramath.github.io/kitty/')">Drive Mad</button>
-        <button onclick="loadGame('https://extramath.github.io/zebra/')">Emulator JS</button>
-        <button onclick="loadGame('https://extramath.github.io/turtle/')">Wordle Unlimited</button>
-        <button onclick="loadGame('https://extramath.github.io/cat/')">Fruit Ninja</button>
-        <button onclick="loadGame('https://extramath.github.io/fox/')">Rooftop Snipers</button>
-        <button onclick="loadGame('https://extramath.github.io/panda/')">Tunnel Rush</button>
-    </div>
-
-    <!-- Category Section for Games for Emulator JS -->
-    <h2>Games for Emulator JS</h2>
-    <div class="game-list">
-        <button onclick="window.location.href='https://github.com/extramath/flashy/raw/main/Mario%20Kart.zip'">DS: Mario Kart</button>
-        <button onclick="window.location.href='https://github.com/extramath/flashy/raw/main/Pokemon%20Red%20Fire.zip'">GBA: Pokemon Red Fire</button>
-        <button onclick="window.location.href='https://github.com/extramath/flashy/raw/main/Mortal%20Kombat%20Deadly%20Alliance.zip'">GBA: Mortal Kombat Deadly Alliance</button>
-    </div>
-
-    <!-- New Category: Other Stuff -->
-    <h2>Other Stuff</h2>
-    <div class="game-list">
-        <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfDV2dLLgG8JFy9bGR7R6EYSXQ_-vRKak9FwQSB2QVouytw_A/viewform?usp=sf_link'">Game Requests</button>
-        <button onclick="window.location.href='https://www.icloud.com/shortcuts/75f6caab785048e39f7559006e0251eb'">Adblocker For iOS</button>
+        <button onclick="loadGame('https://mathpunch.github.io/kitty/')">Stickmanhook</button>
+        <button onclick="loadGame('https://mathpunch.github.io/dog/')">Super Mario 64</button>
+        <button onclick="loadGame('https://mathpunch.github.io/bear/')">Tiny Fishing</button>
+        <button onclick="loadGame('https://mathpunch.github.io/snake/')">TapTapShots</button>
+        <button onclick="loadGame('https://mathpunch.github.io/shark/')">Drive Mad</button>
+        <button onclick="loadGame('https://mathpunch.github.io/zebra/')">Emulator JS</button>
+        <button onclick="loadGame('https://mathpunch.github.io/turtle/')">Wordle Unlimited</button>
+        <button onclick="loadGame('https://mathpunch.github.io/cat/')">Fruit Ninja</button>
+        <button onclick="loadGame('https://mathpunch.github.io/fox/')">Rooftop Snipers</button>
+        <button onclick="loadGame('https://mathpunch.github.io/bat/')">Tunnel Rush</button>
     </div>
 
     <iframe id="game-frame" allowfullscreen></iframe>
+
     <button id="fullscreen-button" onclick="goFullScreen()">Full Screen</button>
 
     <script>
-        // Load game into iframe
         function loadGame(url) {
             const iframe = document.getElementById('game-frame');
             const fullscreenButton = document.getElementById('fullscreen-button');
             iframe.src = url;
             iframe.style.display = 'block';
             fullscreenButton.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent body scrolling when loading a game
         }
 
-        // Fullscreen function
         function goFullScreen() {
             const iframe = document.getElementById('game-frame');
             if (iframe.requestFullscreen) {
                 iframe.requestFullscreen();
             } else if (iframe.mozRequestFullScreen) { // Firefox
                 iframe.mozRequestFullScreen();
-            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
                 iframe.webkitRequestFullscreen();
             } else if (iframe.msRequestFullscreen) { // IE/Edge
                 iframe.msRequestFullscreen();
             }
+            iframe.focus(); // Focus on the iframe when going fullscreen
         }
 
-        // Prevent page scrolling on spacebar press
-        window.addEventListener('keydown', function(e) {
-            if (e.key === ' ' && document.activeElement === document.body) {
-                e.preventDefault();
-            }
-        });
-
-        // Enable keyboard controls for iframe in fullscreen
-        window.addEventListener('keydown', function(e) {
-            const iframe = document.getElementById('game-frame');
-            if (iframe.style.display === 'block' && document.fullscreenElement === iframe) {
-                iframe.contentWindow.postMessage({ type: 'keydown', key: e.key }, '*');
-            }
-        });
-
-        window.addEventListener('keyup', function(e) {
-            const iframe = document.getElementById('game-frame');
-            if (iframe.style.display === 'block' && document.fullscreenElement === iframe) {
-                iframe.contentWindow.postMessage({ type: 'keyup', key: e.key }, '*');
+        // Prevent spacebar from scrolling the page
+        window.addEventListener('keydown', function(event) {
+            if (event.code === 'Space' && !document.fullscreenElement) {
+                event.preventDefault();
             }
         });
     </script>
