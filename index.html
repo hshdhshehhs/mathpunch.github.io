@@ -11,6 +11,7 @@
             align-items: center;
             margin: 0;
             padding: 20px; /* Add some padding */
+            padding-bottom: 60px; /* Add padding at the bottom to avoid overlap with footer */
             background-color: #1a1a1a; /* Dark background */
             color: white; /* White text */
             transition: background-color 0.3s, color 0.3s; /* Smooth transition */
@@ -80,6 +81,17 @@
             font-size: 24px;
             color: white;
         }
+        footer {
+            position: fixed; /* Fixed position */
+            bottom: 0; /* Stick to the bottom of the viewport */
+            left: 0; /* Align to the left */
+            right: 0; /* Align to the right */
+            padding: 10px; /* Padding around the footer */
+            text-align: center; /* Center the footer text */
+            background-color: #1a1a1a; /* Same background color as body */
+            color: white; /* White text */
+            z-index: 1000; /* Make sure it's above other content */
+        }
     </style>
 </head>
 <body>
@@ -136,6 +148,10 @@
         <button onclick="setTheme('black')">Dark Mode</button>
         <button onclick="setTheme('pink')">Pink</button>
     </div>
+
+    <footer>
+        Made By Ozzy
+    </footer>
 
     <script>
         // Check for saved theme on page load
