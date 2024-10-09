@@ -138,6 +138,12 @@
     </div>
 
     <script>
+        // Check for saved theme on page load
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        }
+
         function toggleThemeSelector() {
             const themeSelector = document.getElementById('themeSelector');
             themeSelector.style.display = themeSelector.style.display === 'none' || themeSelector.style.display === '' ? 'block' : 'none';
@@ -169,7 +175,7 @@
                     document.getElementById('themeHeader').style.color = 'white'; // Set header to white
                     break;
                 case 'orange':
-                    document.body.style.backgroundColor = '#FF7F50';
+                    document.body.style.backgroundColor = '#FFA500';
                     document.body.style.color = 'white'; // Set text to white
                     document.getElementById('themeHeader').style.color = 'white'; // Set header to white
                     break;
@@ -180,7 +186,7 @@
                 case 'black':
                     document.body.style.backgroundColor = '#1a1a1a';
                     document.body.style.color = 'white';
-                    document.getElementById('themeHeader').style.color = 'white'; // Set header back to white
+                    document.getElementById('themeHeader').style.color = 'white'; // Set header to white
                     break;
                 case 'pink':
                     document.body.style.backgroundColor = '#FFC0CB';
@@ -188,6 +194,8 @@
                     document.getElementById('themeHeader').style.color = 'white'; // Set header to white
                     break;
             }
+            // Save the selected theme to localStorage
+            localStorage.setItem('theme', color);
         }
     </script>
 </body>
