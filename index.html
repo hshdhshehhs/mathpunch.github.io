@@ -99,8 +99,6 @@
     <div class="settings-icon" onclick="toggleThemeSelector()">⚙️</div>
     <h1>Welcome To mathpunch V2</h1> <!-- Updated header -->
     <div class="button-container">
-        <!-- Added Super Mario Wonder link here -->
-        <button onclick="window.location.href='https://mathpunch.github.io/bee/';">Super Mario Wonder</button>
         <button onclick="window.location.href='https://mathpunch.github.io/kitty/';">Stickmanhook</button>
         <button onclick="window.location.href='https://mathpunch.github.io/dog/';">Super Mario 64</button>
         <button onclick="window.location.href='https://mathpunch.github.io/bear/';">Tiny Fishing</button>
@@ -166,4 +164,11 @@
         function toggleThemeSelector() {
             const themeSelector = document.getElementById('themeSelector');
             themeSelector.style.display = themeSelector.style.display === 'none' || themeSelector.style.display === '' ? 'block' : 'none';
-            const header = document.getElement
+            const header = document.getElementById('themeHeader');
+            header.style.color = 'white'; // Default to white
+        }
+
+        function setTheme(color) {
+            switch (color) {
+                case 'blue':
+                    document.body.style
