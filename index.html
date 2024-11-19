@@ -11,42 +11,42 @@
             flex-direction: column;
             align-items: center;
             margin: 0;
-            padding: 20px; /* Add some padding */
-            padding-bottom: 60px; /* Add padding at the bottom to avoid overlap with footer */
-            background-color: #1a1a1a; /* Dark background */
-            color: white; /* White text */
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+            padding: 20px;
+            padding-bottom: 60px;
+            background-color: #1a1a1a;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
         }
         h1 {
-            margin: 20px 0; /* Space around the header */
-            font-size: 2em; /* Increase font size for visibility */
-            text-align: center; /* Center the text */
-            white-space: nowrap; /* Prevent text wrapping */
+            margin: 20px 0;
+            font-size: 2em;
+            text-align: center;
+            white-space: nowrap;
         }
         .button-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-y: auto; /* Allow vertical scrolling */
-            max-height: 80vh; /* Limit height to allow scrolling */
-            width: 100%; /* Full width */
+            overflow-y: auto;
+            max-height: 80vh;
+            width: 100%;
         }
         button {
-            margin: 10px 0; /* Spacing between buttons */
-            background-color: transparent; /* Transparent background */
-            color: white; /* White text color for buttons */
-            border: 2px solid white; /* White border */
-            padding: 10px 20px; /* Padding for buttons */
-            cursor: pointer; /* Change cursor to pointer */
-            transition: background-color 0.3s; /* Transition effect */
-            width: 100%; /* Make buttons full width */
-            max-width: 300px; /* Limit button width */
+            margin: 10px 0;
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            max-width: 300px;
         }
         button:hover {
-            background-color: rgba(255, 255, 255, 0.1); /* Lighten button on hover */
+            background-color: rgba(255, 255, 255, 0.1);
         }
         h2 {
-            margin-top: 20px; /* Space above the section header */
+            margin-top: 20px;
         }
         .settings-icon {
             position: absolute;
@@ -57,22 +57,22 @@
             color: white;
         }
         .theme-selector {
-            display: none; /* Initially hidden */
+            display: none;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #000; /* Pitch black background */
+            background-color: #000;
             padding: 20px;
             border-radius: 10px;
-            z-index: 1000; /* Bring it above other elements */
-            text-align: center; /* Center text in the menu */
+            z-index: 1000;
+            text-align: center;
         }
         .theme-selector button {
             margin: 5px;
-            color: white; /* White text for buttons in theme selector */
-            background-color: transparent; /* Transparent background for buttons */
-            border: 2px solid white; /* White border */
+            color: white;
+            background-color: transparent;
+            border: 2px solid white;
         }
         .close-icon {
             position: absolute;
@@ -83,49 +83,57 @@
             color: white;
         }
         footer {
-            position: fixed; /* Fixed position */
-            bottom: 0; /* Stick to the bottom of the viewport */
-            left: 0; /* Align to the left */
-            right: 0; /* Align to the right */
-            padding: 10px; /* Padding around the footer */
-            text-align: center; /* Center the footer text */
-            background-color: #1a1a1a; /* Same background color as body */
-            color: white; /* White text */
-            z-index: 1000; /* Make sure it's above other content */
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+            z-index: 1000;
         }
-        
-        /* Popup styles */
+
+        /* Popup Style */
         .popup {
+            display: none;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 30px;
             border-radius: 10px;
             text-align: center;
-            z-index: 9999; /* Ensures the popup is above other content */
-            color: white;
+            z-index: 9999;
         }
         .popup button {
-            background-color: #ff5733; /* Button color */
+            background-color: transparent;
             color: white;
-            border: none;
+            border: 2px solid white;
             padding: 10px 20px;
             cursor: pointer;
-            font-size: 16px;
-            margin-top: 15px;
-            border-radius: 5px;
+            transition: background-color 0.3s;
         }
         .popup button:hover {
-            background-color: #e24a1d; /* Darker button color on hover */
+            background-color: rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
 <body>
+    <!-- Settings Icon -->
     <div class="settings-icon" onclick="toggleThemeSelector()">⚙️</div>
-    <h1>Welcome To mathpunch V2</h1> <!-- Updated header -->
+    <h1>Welcome To mathpunch V2</h1>
+    
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <h2>Welcome To mathpunch V2</h2>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
     <div class="button-container">
+        <!-- Super Mario Wonder Game Link -->
+        <button onclick="window.location.href='https://mathpunch.github.io/bee/';">Super Mario Wonder</button>
         <button onclick="window.location.href='https://mathpunch.github.io/kitty/';">Stickmanhook</button>
         <button onclick="window.location.href='https://mathpunch.github.io/dog/';">Super Mario 64</button>
         <button onclick="window.location.href='https://mathpunch.github.io/bear/';">Tiny Fishing</button>
@@ -139,7 +147,7 @@
         <button onclick="window.location.href='https://mathpunch.github.io/wolf/';">Burrito Bison</button>
         <button onclick="window.location.href='https://mathpunch.github.io/monkey/';">Trash Truck Simulator</button>
 
-        <h2>Games For Emulator JS</h2> <!-- Section header -->
+        <h2>Games For Emulator JS</h2>
         <button onclick="window.location.href='https://github.com/ixlmathgg/flashy/raw/main/Mario%20Kart.zip';">DS: Mario Kart</button>
         <button onclick="window.location.href='https://github.com/ixlmathgg/Licky/raw/main/Pokemon%20Red%20Fire.zip';">GBA: Pokémon Red Fire</button>
         <button onclick="window.location.href='https://github.com/mathpunch/didactic-fortnight/raw/refs/heads/main/LEGO%20Star%20Wars%20II.zip';">GBA: Lego Star Wars II</button>
@@ -164,8 +172,29 @@
     </div>
 
     <div class="theme-selector" id="themeSelector">
-        <div class="close-icon" onclick="toggleThemeSelector()">❌</div> <!-- Close icon -->
-        <h2 id="themeHeader">Select Theme</h2> <!-- Header text -->
+        <div class="close-icon" onclick="toggleThemeSelector()">❌</div>
+        <h2 id="themeHeader">Select Theme</h2>
         <button onclick="setTheme('blue')">Blue</button>
         <button onclick="setTheme('red')">Red</button>
-        <button
+        <button onclick="setTheme('purple')">Purple</button>
+        <button onclick="setTheme('green')">Green</button>
+        <button onclick="setTheme('yellow')">Yellow</button>
+        <button onclick="setTheme('orange')">Orange</button>
+        <button onclick="setTheme('grey')">Grey</button>
+        <button onclick="setTheme('black')">Dark Mode</button>
+        <button onclick="setTheme('pink')">Pink</button>
+    </div>
+
+    <footer>
+        Made By Ozzy
+    </footer>
+
+    <script>
+        // Show popup on page load
+        window.onload = function() {
+            document.getElementById('popup').style.display = 'block';
+        };
+
+        // Close the popup
+        function closePopup() {
+            document.getElementById('popup').style.display = '
