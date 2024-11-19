@@ -99,6 +99,8 @@
     <div class="settings-icon" onclick="toggleThemeSelector()">⚙️</div>
     <h1>Welcome To mathpunch V2</h1> <!-- Updated header -->
     <div class="button-container">
+        <!-- Added Super Mario Wonder link here -->
+        <button onclick="window.location.href='https://mathpunch.github.io/bee/';">Super Mario Wonder</button>
         <button onclick="window.location.href='https://mathpunch.github.io/kitty/';">Stickmanhook</button>
         <button onclick="window.location.href='https://mathpunch.github.io/dog/';">Super Mario 64</button>
         <button onclick="window.location.href='https://mathpunch.github.io/bear/';">Tiny Fishing</button>
@@ -134,9 +136,6 @@
 
         <h2>Prank Shortcut</h2>
         <button onclick="window.location.href='https://www.icloud.com/shortcuts/4e9a1be2aace434981f58226805be72f';">Click Me</button>
-
-        <h2>Super Mario Wonder</h2> <!-- Added new game -->
-        <button onclick="window.location.href='https://mathpunch.github.io/bee/';">Super Mario Wonder</button>
     </div>
 
     <div class="theme-selector" id="themeSelector">
@@ -166,4 +165,5 @@
 
         function toggleThemeSelector() {
             const themeSelector = document.getElementById('themeSelector');
-            themeSelector.style.display = themeSelector.style.display === 'none' || themeSelector.style
+            themeSelector.style.display = themeSelector.style.display === 'none' || themeSelector.style.display === '' ? 'block' : 'none';
+            const header = document.getElement
