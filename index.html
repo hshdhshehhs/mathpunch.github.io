@@ -45,43 +45,6 @@
         button:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        h2 {
-            margin-top: 20px;
-        }
-        .settings-icon {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            cursor: pointer;
-            font-size: 24px;
-            color: white;
-        }
-        .theme-selector {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #000;
-            padding: 20px;
-            border-radius: 10px;
-            z-index: 1000;
-            text-align: center;
-        }
-        .theme-selector button {
-            margin: 5px;
-            color: white;
-            background-color: transparent;
-            border: 2px solid white;
-        }
-        .close-icon {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            font-size: 24px;
-            color: white;
-        }
         footer {
             position: fixed;
             bottom: 0;
@@ -93,114 +56,18 @@
             color: white;
             z-index: 1000;
         }
-
-        /* Popup Style */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            z-index: 9999;
-        }
-        .popup button {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .popup button:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
     </style>
 </head>
 <body>
-    <!-- Settings Icon -->
-    <div class="settings-icon" onclick="toggleThemeSelector()">⚙️</div>
-    <h1>Welcome To mathpunch V2</h1>
+    <h1>Welcome To MathPunch V2</h1>
     
-    <!-- Popup -->
-    <div id="popup" class="popup">
-        <h2>Welcome To mathpunch V2</h2>
-        <button onclick="closePopup()">Close</button>
-    </div>
-
     <div class="button-container">
         <!-- Super Mario Wonder Game Link -->
         <button onclick="window.location.href='https://mathpunch.github.io/bee/';">Super Mario Wonder</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/kitty/';">Stickmanhook</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/dog/';">Super Mario 64</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/bear/';">Tiny Fishing</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/snake/';">Tap Tap Shots</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/shark/';">Drive Mad</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/zebra/';">Emulator JS</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/turtle/';">Wordle Unlimited</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/doggy/';">Fruit Ninja</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/fox/';">Rooftop Snipers</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/bat/';">Tunnel Rush</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/wolf/';">Burrito Bison</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/monkey/';">Trash Truck Simulator</button>
-
-        <h2>Games For Emulator JS</h2>
-        <button onclick="window.location.href='https://github.com/ixlmathgg/flashy/raw/main/Mario%20Kart.zip';">DS: Mario Kart</button>
-        <button onclick="window.location.href='https://github.com/ixlmathgg/Licky/raw/main/Pokemon%20Red%20Fire.zip';">GBA: Pokémon Red Fire</button>
-        <button onclick="window.location.href='https://github.com/mathpunch/didactic-fortnight/raw/refs/heads/main/LEGO%20Star%20Wars%20II.zip';">GBA: Lego Star Wars II</button>
-        
-        <h2>Games Requests</h2>
-        <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc6PG1pB-SmSDqf_gJ_DYWV5HWFtGCcWpgGf2EaS0EpKcICqQ/viewform?usp=sf_link';">Click Me</button>
-
-        <h2>Adblocker</h2>
-        <button onclick="window.location.href='https://www.icloud.com/shortcuts/60f5af18cbfe435f886450e6a4c332e5';">Click Me</button>
-
-        <h2>Chatting</h2>
-        <button onclick="window.location.href='https://sites.google.com/view/mathpunch';">Click Me</button>
-
-        <h2>Backup Links</h2>
-        <button onclick="window.location.href='https://extramath.github.io/';">Click Me</button>
-
-        <h2>New Site Beta</h2>
-        <button onclick="window.location.href='https://mathpunch.us.to/';">Click Me</button>
-
-        <h2>Prank Shortcut</h2>
-        <button onclick="window.location.href='https://www.icloud.com/shortcuts/4e9a1be2aace434981f58226805be72f';">Click Me</button>
-    </div>
-
-    <div class="theme-selector" id="themeSelector">
-        <div class="close-icon" onclick="toggleThemeSelector()">❌</div>
-        <h2 id="themeHeader">Select Theme</h2>
-        <button onclick="setTheme('blue')">Blue</button>
-        <button onclick="setTheme('red')">Red</button>
-        <button onclick="setTheme('purple')">Purple</button>
-        <button onclick="setTheme('green')">Green</button>
-        <button onclick="setTheme('yellow')">Yellow</button>
-        <button onclick="setTheme('orange')">Orange</button>
-        <button onclick="setTheme('grey')">Grey</button>
-        <button onclick="setTheme('black')">Dark Mode</button>
-        <button onclick="setTheme('pink')">Pink</button>
     </div>
 
     <footer>
         Made By Ozzy
     </footer>
-
-    <script>
-        // Show popup on page load
-        window.onload = function() {
-            document.getElementById('popup').style.display = 'block';
-        };
-
-        // Close the popup
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-        }
-
-        // Show/Hide the theme selector
-        function toggleThemeSelector() {
-            const themeSelector = document.getElementById('themeSelector');
-            theme
+</body>
+</html>
