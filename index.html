@@ -30,6 +30,7 @@
             max-height: 80vh; /* Limit height for scrolling */
             width: 100%;
             padding-right: 20px; /* Prevent cutting off buttons */
+            margin-top: 20px; /* Keeps the position consistent */
         }
         button {
             margin: 10px 0;
@@ -171,4 +172,10 @@
         }
 
         function setTheme(theme) {
-            document.body.style.backgroundColor = theme === 'black' ? '#000' : theme === 'blue' ? '#1E90FF' : theme === 'red' ? '#FF6347' : theme === 'green' ? '#32CD32' : theme === 'yellow' ? '#FFD700' : theme === 'purple' ? '#800080' : theme === 'orange' ? '#FFA500' : theme === 'pink' ? '#FF1493' : '#000
+            document.body.style.backgroundColor = theme === 'black' ? '#000' : theme === 'blue' ? '#1E90FF' : theme === 'red' ? '#FF6347' : theme === 'green' ? '#32CD32' : theme === 'yellow' ? '#FFD700' : theme === 'purple' ? '#800080' : theme === 'orange' ? '#FFA500' : theme === 'pink' ? '#FF1493' : '#000';
+            document.body.style.color = theme === 'black' ? 'white' : 'black';
+            localStorage.setItem('theme', theme);
+        }
+    </script>
+</body>
+</html>
