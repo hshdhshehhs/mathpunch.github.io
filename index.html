@@ -116,6 +116,9 @@
         <button onclick="window.location.href='https://github.com/ixlmathgg/Licky/raw/main/Pokemon%20Red%20Fire.zip';">GBA: Pokémon Red Fire</button>
         <button onclick="window.location.href='https://github.com/mathpunch/didactic-fortnight/raw/refs/heads/main/LEGO%20Star%20Wars%20II.zip';">GBA: Lego Star Wars II</button>
         
+        <h2>MathPunch AI</h2>
+        <button onclick="window.location.href='https://mathpunch.github.io/crab';">Click Me</button>
+
         <h2>Games Requests</h2>
         <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc6PG1pB-SmSDqf_gJ_DYWV5HWFtGCcWpgGf2EaS0EpKcICqQ/viewform?usp=sf_link';">Click Me</button>
 
@@ -165,54 +168,3 @@
             themeSelector.style.display = themeSelector.style.display === 'none' || themeSelector.style.display === '' ? 'block' : 'none';
             const header = document.getElementById('themeHeader');
             header.style.color = 'white'; // Default to white
-        }
-
-        function setTheme(color) {
-            switch (color) {
-                case 'blue':
-                    document.body.style.backgroundColor = '#007BFF';
-                    document.body.style.color = 'white';
-                    break;
-                case 'red':
-                    document.body.style.backgroundColor = '#FF0000';
-                    document.body.style.color = 'white';
-                    break;
-                case 'purple':
-                    document.body.style.backgroundColor = '#800080';
-                    document.body.style.color = 'white';
-                    break;
-                case 'green':
-                    document.body.style.backgroundColor = '#28A745';
-                    document.body.style.color = 'white';
-                    break;
-                case 'yellow':
-                    document.body.style.backgroundColor = '#FFC107';
-                    document.body.style.color = 'white'; // Set text to white
-                    document.getElementById('themeHeader').style.color = 'white'; // Set header to white
-                    break;
-                case 'orange':
-                    document.body.style.backgroundColor = '#FFA500';
-                    document.body.style.color = 'white'; // Set text to white
-                    document.getElementById('themeHeader').style.color = 'white'; // Set header to white
-                    break;
-                case 'grey':
-                    document.body.style.backgroundColor = '#6c757d';
-                    document.body.style.color = 'white';
-                    break;
-                case 'black':
-                    document.body.style.backgroundColor = '#1a1a1a';
-                    document.body.style.color = 'white';
-                    document.getElementById('themeHeader').style.color = 'white'; // Set header to white
-                    break;
-                case 'pink':
-                    document.body.style.backgroundColor = '#FFC0CB';
-                    document.body.style.color = 'white'; // Set text to white
-                    document.getElementById('themeHeader').style.color = 'white'; // Set header to white
-                    break;
-            }
-            // Save the selected theme to localStorage
-            localStorage.setItem('theme', color);
-        }
-    </script>
-</body>
-</html>
