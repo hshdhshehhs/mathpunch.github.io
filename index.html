@@ -96,9 +96,13 @@
     </style>
 </head>
 <body>
+    <!-- Settings icon to open the theme selector -->
     <div class="settings-icon" onclick="toggleThemeSelector()">⚙️</div>
+    
     <h1>Welcome To mathpunch V2</h1>
+    
     <div class="button-container">
+        <!-- Your existing buttons -->
         <button onclick="window.location.href='https://mathpunch.github.io/kitty/';">Stickmanhook</button>
         <button onclick="window.location.href='https://mathpunch.github.io/dog/';">Super Mario 64</button>
         <button onclick="window.location.href='https://mathpunch.github.io/bear/';">Tiny Fishing</button>
@@ -111,7 +115,7 @@
         <button onclick="window.location.href='https://mathpunch.github.io/bat/';">Tunnel Rush</button>
         <button onclick="window.location.href='https://mathpunch.github.io/wolf/';">Burrito Bison</button>
         <button onclick="window.location.href='https://mathpunch.github.io/monkey/';">Trash Truck Simulator</button>
-
+        
         <h2>Games For Emulator JS</h2>
         <button onclick="window.location.href='https://github.com/ixlmathgg/flashy/raw/main/Mario%20Kart.zip';">DS: Mario Kart</button>
         <button onclick="window.location.href='https://github.com/ixlmathgg/Licky/raw/main/Pokemon%20Red%20Fire.zip';">GBA: Pokémon Red Fire</button>
@@ -139,6 +143,7 @@
         <button onclick="window.location.href='https://www.icloud.com/shortcuts/4e9a1be2aace434981f58226805be72f';">Click Me</button>
     </div>
 
+    <!-- Theme selector modal -->
     <div class="theme-selector" id="themeSelector">
         <div class="close-icon" onclick="toggleThemeSelector()">❌</div>
         <h2 id="themeHeader">Select Theme</h2>
@@ -153,22 +158,19 @@
         <button onclick="setTheme('pink')">Pink</button>
     </div>
 
+    <!-- Footer -->
     <footer>
         Made By Ozzy
     </footer>
 
     <script>
-        // Check for saved theme on page load
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            setTheme(savedTheme);
-        }
-
+        // Toggle the visibility of the theme selector
         function toggleThemeSelector() {
             const themeSelector = document.getElementById('themeSelector');
             themeSelector.style.display = themeSelector.style.display === 'none' || themeSelector.style.display === '' ? 'block' : 'none';
         }
 
+        // Set the theme
         function setTheme(theme) {
             const body = document.body;
             const header = document.querySelector('h1');
@@ -191,6 +193,4 @@
                 body.style.backgroundColor = '#28a745';
                 body.style.color = 'white';
                 header.style.color = 'white';
-            } else if (theme === 'yellow') {
-                body.style.backgroundColor = '#ffc107';
-                body.style
+            } else if
