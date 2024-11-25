@@ -3,169 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathPunch</title>
+    <title>MathPunch AI</title>
     <style>
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 0;
-            padding: 20px; /* Add some padding */
-            padding-bottom: 60px; /* Add padding at the bottom to avoid overlap with footer */
-            background-color: #1a1a1a; /* Dark background */
-            color: white; /* White text */
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+            padding: 20px;
+            padding-bottom: 60px;
+            background-color: #1a1a1a;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
         }
-        h1 {
-            margin: 20px 0; /* Space around the header */
-            font-size: 2em; /* Increase font size for visibility */
-            text-align: center; /* Center the text */
-            white-space: nowrap; /* Prevent text wrapping */
+        h1, h2 {
+            margin: 20px 0;
+            font-size: 2em;
+            text-align: center;
+            white-space: nowrap;
         }
         .button-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-y: auto; /* Allow vertical scrolling */
-            max-height: 80vh; /* Limit height to allow scrolling */
-            width: 100%; /* Full width */
+            overflow-y: auto;
+            max-height: 80vh;
+            width: 100%;
         }
         button {
-            margin: 10px 0; /* Spacing between buttons */
-            background-color: transparent; /* Transparent background */
-            color: white; /* White text color for buttons */
-            border: 2px solid white; /* White border */
-            padding: 10px 20px; /* Padding for buttons */
-            cursor: pointer; /* Change cursor to pointer */
-            transition: background-color 0.3s; /* Transition effect */
-            width: 100%; /* Make buttons full width */
-            max-width: 300px; /* Limit button width */
+            margin: 10px 0;
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            max-width: 300px;
         }
         button:hover {
-            background-color: rgba(255, 255, 255, 0.1); /* Lighten button on hover */
+            background-color: rgba(255, 255, 255, 0.1);
         }
-        h2 {
-            margin-top: 20px; /* Space above the section header */
-        }
-        .settings-icon {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            cursor: pointer;
-            font-size: 24px;
-            color: white;
-        }
-        .theme-selector {
-            display: none; /* Initially hidden */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #000; /* Pitch black background */
+        .section {
+            margin-top: 20px;
             padding: 20px;
-            border-radius: 10px;
-            z-index: 1000; /* Bring it above other elements */
-            text-align: center; /* Center text in the menu */
+            width: 100%;
+            max-width: 900px;
         }
-        .theme-selector button {
-            margin: 5px;
-            color: white; /* White text for buttons in theme selector */
-            background-color: transparent; /* Transparent background for buttons */
-            border: 2px solid white; /* White border */
+        .dropdown-container {
+            margin: 20px 0;
+            width: 100%;
         }
-        .close-icon {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            font-size: 24px;
-            color: white;
+        .dropdown-container select {
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
         }
-        footer {
-            position: fixed; /* Fixed position */
-            bottom: 0; /* Stick to the bottom of the viewport */
-            left: 0; /* Align to the left */
-            right: 0; /* Align to the right */
-            padding: 10px; /* Padding around the footer */
-            text-align: center; /* Center the footer text */
-            background-color: #1a1a1a; /* Same background color as body */
-            color: white; /* White text */
-            z-index: 1000; /* Make sure it's above other content */
+        .dropdown-container select option {
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="settings-icon" onclick="toggleThemeSelector()">⚙️</div>
-    <h1>Welcome To mathpunch V2</h1> <!-- Updated header -->
-    <div class="button-container">
-        <button onclick="window.location.href='https://mathpunch.github.io/kitty/';">Stickmanhook</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/dog/';">Super Mario 64</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/bear/';">Tiny Fishing</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/snake/';">Tap Tap Shots</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/shark/';">Drive Mad</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/zebra/';">Emulator JS</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/turtle/';">Wordle Unlimited</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/doggy/';">Fruit Ninja</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/fox/';">Rooftop Snipers</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/bat/';">Tunnel Rush</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/wolf/';">Burrito Bison</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/monkey/';">Trash Truck Simulator</button>
 
-        <h2>Games For Emulator JS</h2> <!-- Section header -->
-        <button onclick="window.location.href='https://github.com/ixlmathgg/flashy/raw/main/Mario%20Kart.zip';">DS: Mario Kart</button>
-        <button onclick="window.location.href='https://github.com/ixlmathgg/Licky/raw/main/Pokemon%20Red%20Fire.zip';">GBA: Pokémon Red Fire</button>
-        <button onclick="window.location.href='https://github.com/mathpunch/didactic-fortnight/raw/refs/heads/main/LEGO%20Star%20Wars%20II.zip';">GBA: Lego Star Wars II</button>
-
-        <!-- Moved Games Requests section here -->
-        <h2>Games Requests</h2>
-        <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc6PG1pB-SmSDqf_gJ_DYWV5HWFtGCcWpgGf2EaS0EpKcICqQ/viewform?usp=sf_link';">Click Me</button>
-
-        <h2>Adblocker</h2>
-        <button onclick="window.location.href='https://www.icloud.com/shortcuts/60f5af18cbfe435f886450e6a4c332e5';">Click Me</button>
-
-        <h2>Chatting</h2>
-        <button onclick="window.location.href='https://sites.google.com/view/mathpunch';">Click Me</button>
-
-        <h2>Backup Links</h2>
-        <button onclick="window.location.href='https://extramath.github.io/';">Click Me</button>
-
-        <h2>New Site Beta</h2>
-        <button onclick="window.location.href='https://mathpunch.us.to/';">Click Me</button>
-
-        <h2>Prank Shortcut</h2>
-        <button onclick="window.location.href='https://www.icloud.com/shortcuts/4e9a1be2aace434981f58226805be72f';">Click Me</button>
+    <!-- Games For Emulator JS Section -->
+    <div class="section" id="gamesForEmulatorJS">
+        <h1>Games For Emulator JS</h1>
+        <div class="button-container">
+            <button onclick="window.location.href='https://example.com'">Game 1</button>
+            <button onclick="window.location.href='https://example.com'">Game 2</button>
+            <button onclick="window.location.href='https://example.com'">Game 3</button>
+            <button onclick="window.location.href='https://example.com'">Game 4</button>
+            <button onclick="window.location.href='https://example.com'">Game 5</button>
+            <!-- Additional game buttons can be added here -->
+        </div>
     </div>
 
-    <div class="theme-selector" id="themeSelector">
-        <div class="close-icon" onclick="toggleThemeSelector()">❌</div> <!-- Close icon -->
-        <h2 id="themeHeader">Select Theme</h2> <!-- Header text -->
-        <button onclick="setTheme('blue')">Blue</button>
-        <button onclick="setTheme('red')">Red</button>
-        <button onclick="setTheme('purple')">Purple</button>
-        <button onclick="setTheme('green')">Green</button>
-        <button onclick="setTheme('yellow')">Yellow</button>
-        <button onclick="setTheme('orange')">Orange</button>
-        <button onclick="setTheme('grey')">Grey</button>
-        <button onclick="setTheme('black')">Dark Mode</button>
-        <button onclick="setTheme('pink')">Pink</button>
+    <!-- MathPunch AI Section (Moved below Games For Emulator JS) -->
+    <div class="section" id="mathPunchAI">
+        <h2>MathPunch AI</h2>
+        <div class="dropdown-container">
+            <select id="playerDropdown" onchange="updatePlayerSelection()">
+                <option value="player1">Player 1</option>
+                <option value="player2">Player 2</option>
+                <option value="player3">Player 3</option>
+                <option value="player4">Player 4</option>
+            </select>
+        </div>
+        <button onclick="alert('MathPunch AI Activated for ' + document.getElementById('playerDropdown').value)">Activate MathPunch AI</button>
     </div>
-
-    <footer>
-        Made By Ozzy
-    </footer>
 
     <script>
-        // Check for saved theme on page load
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            setTheme(savedTheme);
+        // Function to handle dropdown selection change
+        function updatePlayerSelection() {
+            const player = document.getElementById('playerDropdown').value;
+            console.log('Selected player: ', player);
         }
+    </script>
 
-        function toggleThemeSelector() {
-            const themeSelector = document.getElementById('themeSelector');
-            themeSelector.style.display = themeSelector.style.display === 'none' || themeSelector.style.display === '' ? 'block' : 'none';
-            const header = document.getElementById('themeHeader');
-            header.style.color = 'white'; // Default to white
-        }
-
-        function setTheme
+</body>
+</html>
