@@ -12,7 +12,7 @@
             margin: 0;
             padding: 20px;
             padding-bottom: 60px;
-            background-color: #1a1a1a;
+            background-color: #1a1a1a; /* Matches footer background */
             color: white;
             transition: background-color 0.3s, color 0.3s;
         }
@@ -20,7 +20,8 @@
             margin: 20px 0;
             font-size: 2em;
             text-align: center;
-            white-space: nowrap;
+            color: white; /* Ensure it stays white */
+            transition: color 0.3s; /* Smooth transition for color changes */
         }
         .button-container {
             display: flex;
@@ -115,7 +116,7 @@
         <button onclick="window.location.href='https://github.com/ixlmathgg/flashy/raw/main/Mario%20Kart.zip';">DS: Mario Kart</button>
         <button onclick="window.location.href='https://github.com/ixlmathgg/Licky/raw/main/Pokemon%20Red%20Fire.zip';">GBA: Pokémon Red Fire</button>
         <button onclick="window.location.href='https://github.com/mathpunch/didactic-fortnight/raw/refs/heads/main/LEGO%20Star%20Wars%20II.zip';">GBA: Lego Star Wars II</button>
-
+        
         <h2>MathPunch AI</h2>
         <button onclick="window.location.href='https://mathpunch.github.io/crab';">Click Me</button>
 
@@ -165,18 +166,31 @@
 
         function toggleThemeSelector() {
             const themeSelector = document.getElementById('themeSelector');
-            if (themeSelector.style.display === 'none' || themeSelector.style.display === '') {
-                themeSelector.style.display = 'block'; // Show the theme selector
-            } else {
-                themeSelector.style.display = 'none'; // Hide the theme selector
-            }
+            themeSelector.style.display = themeSelector.style.display === 'none' || themeSelector.style.display === '' ? 'block' : 'none';
         }
 
-        function setTheme(color) {
-            document.body.style.backgroundColor = color;
-            document.body.style.color = color === 'black' ? 'white' : 'black';
-            localStorage.setItem('theme', color); // Save the theme
-        }
-    </script>
-</body>
-</html>
+        function setTheme(theme) {
+            const body = document.body;
+            const header = document.querySelector('h1');
+            const themeSelector = document.getElementById('themeSelector');
+            const closeIcon = document.querySelector('.close-icon');
+
+            if (theme === 'blue') {
+                body.style.backgroundColor = '#0d6efd';
+                body.style.color = 'white';
+                header.style.color = 'white';
+            } else if (theme === 'red') {
+                body.style.backgroundColor = '#dc3545';
+                body.style.color = 'white';
+                header.style.color = 'white';
+            } else if (theme === 'purple') {
+                body.style.backgroundColor = '#6f42c1';
+                body.style.color = 'white';
+                header.style.color = 'white';
+            } else if (theme === 'green') {
+                body.style.backgroundColor = '#28a745';
+                body.style.color = 'white';
+                header.style.color = 'white';
+            } else if (theme === 'yellow') {
+                body.style.backgroundColor = '#ffc107';
+                body.style
