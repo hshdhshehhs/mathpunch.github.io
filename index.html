@@ -93,6 +93,26 @@
             color: white;
             z-index: 1000;
         }
+        .search-container {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-button:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
@@ -100,7 +120,13 @@
     <div class="settings-icon" onclick="toggleThemeSelector()">⚙️</div>
     
     <h1>Welcome To mathpunch V2</h1>
-    
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for a game...">
+        <button class="search-button" onclick="searchGame()">Search</button>
+    </div>
+
     <div class="button-container">
         <!-- Your existing buttons -->
         <button onclick="window.location.href='https://mathpunch.github.io/kitty/';">Stickmanhook</button>
@@ -175,22 +201,4 @@
             const body = document.body;
             const header = document.querySelector('h1');
             const themeSelector = document.getElementById('themeSelector');
-            const closeIcon = document.querySelector('.close-icon');
-
-            if (theme === 'blue') {
-                body.style.backgroundColor = '#0d6efd';
-                body.style.color = 'white';
-                header.style.color = 'white';
-            } else if (theme === 'red') {
-                body.style.backgroundColor = '#dc3545';
-                body.style.color = 'white';
-                header.style.color = 'white';
-            } else if (theme === 'purple') {
-                body.style.backgroundColor = '#6f42c1';
-                body.style.color = 'white';
-                header.style.color = 'white';
-            } else if (theme === 'green') {
-                body.style.backgroundColor = '#28a745';
-                body.style.color = 'white';
-                header.style.color = 'white';
-            } else if
+           
