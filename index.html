@@ -156,9 +156,10 @@
     </footer>
 
     <script>
+        // Show/Hide theme selector when the settings icon is clicked
         function toggleThemeSelector() {
             const themeSelector = document.getElementById('themeSelector');
-            // Toggle visibility of the theme selector
+            // Toggle the visibility of the theme selector
             if (themeSelector.style.display === 'none' || themeSelector.style.display === '') {
                 themeSelector.style.display = 'block';
             } else {
@@ -166,14 +167,14 @@
             }
         }
 
+        // Set the theme by changing the color
         function setTheme(theme) {
-            // Change only the theme color, not the page background color
-            document.body.style.color = theme; // Changing text color for theme, keep background intact
-            localStorage.setItem('theme', theme);
-            toggleThemeSelector(); // Close the theme selector after applying the theme
+            document.body.style.color = theme; // Change only the text color
+            localStorage.setItem('theme', theme); // Save the theme preference
+            toggleThemeSelector(); // Close the theme selector after selecting
         }
 
-        // Check for saved theme on page load
+        // Check if there is a saved theme in localStorage on page load
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             setTheme(savedTheme);
