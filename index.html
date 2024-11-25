@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MathPunch</title>
     <style>
-        /* Existing styles */
         body {
             display: flex;
             flex-direction: column;
@@ -13,7 +12,7 @@
             margin: 0;
             padding: 20px;
             padding-bottom: 60px;
-            background-color: #1a1a1a;
+            background-color: #1a1a1a; /* Matches footer background */
             color: white;
             transition: background-color 0.3s, color 0.3s;
         }
@@ -21,7 +20,8 @@
             margin: 20px 0;
             font-size: 2em;
             text-align: center;
-            white-space: nowrap;
+            color: white; /* Ensure it stays white */
+            transition: color 0.3s; /* Smooth transition for color changes */
         }
         .button-container {
             display: flex;
@@ -45,18 +45,16 @@
         button:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        .settings-icon, .search-icon {
+        h2 {
+            margin-top: 20px;
+        }
+        .settings-icon {
             position: absolute;
             top: 20px;
+            left: 20px;
             cursor: pointer;
             font-size: 24px;
             color: white;
-        }
-        .settings-icon {
-            left: 20px;
-        }
-        .search-icon {
-            right: 20px;
         }
         .theme-selector {
             display: none;
@@ -76,31 +74,10 @@
             background-color: transparent;
             border: 2px solid white;
         }
-        .search-menu {
-            display: none;
-            position: fixed;
-            top: 20%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            z-index: 1000;
-            text-align: center;
-            width: 90%;
-            max-width: 400px;
-        }
-        .search-menu input {
-            padding: 10px;
-            width: 80%;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
-        .close-search {
+        .close-icon {
             position: absolute;
-            top: 5px;
-            right: 5px;
+            top: 10px;
+            right: 10px;
             cursor: pointer;
             font-size: 24px;
             color: white;
@@ -114,34 +91,85 @@
             text-align: center;
             background-color: #1a1a1a;
             color: white;
+            z-index: 1000;
+        }
+        .search-container {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
-    <!-- Settings and Search Icon -->
+    <!-- Settings icon to open the theme selector -->
     <div class="settings-icon" onclick="toggleThemeSelector()">⚙️</div>
-    <div class="search-icon" onclick="toggleSearchMenu()">🔍</div>
-
-    <!-- Header and Buttons -->
+    
     <h1>Welcome To mathpunch V2</h1>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for a game...">
+        <button class="search-button" onclick="searchGame()">Search</button>
+    </div>
+
     <div class="button-container">
-        <button class="game-button" onclick="window.location.href='https://mathpunch.github.io/kitty/';">Stickmanhook</button>
-        <button class="game-button" onclick="window.location.href='https://mathpunch.github.io/dog/';">Super Mario 64</button>
-        <button class="game-button" onclick="window.location.href='https://mathpunch.github.io/bear/';">Tiny Fishing</button>
+        <!-- Your original game buttons -->
+        <button onclick="window.location.href='https://mathpunch.github.io/kitty/';">Stickmanhook</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/dog/';">Super Mario 64</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/bear/';">Tiny Fishing</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/snake/';">Tap Tap Shots</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/shark/';">Drive Mad</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/zebra/';">Emulator JS</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/turtle/';">Wordle Unlimited</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/doggy/';">Fruit Ninja</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/fox/';">Rooftop Snipers</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/bat/';">Tunnel Rush</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/wolf/';">Burrito Bison</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/monkey/';">Trash Truck Simulator</button>
+
         <h2>Games For Emulator JS</h2>
-        <button class="game-button" onclick="window.location.href='https://github.com/ixlmathgg/flashy/raw/main/Mario%20Kart.zip';">DS: Mario Kart</button>
+        <button onclick="window.location.href='https://github.com/ixlmathgg/flashy/raw/main/Mario%20Kart.zip';">DS: Mario Kart</button>
+        <button onclick="window.location.href='https://github.com/ixlmathgg/Licky/raw/main/Pokemon%20Red%20Fire.zip';">GBA: Pokémon Red Fire</button>
+        <button onclick="window.location.href='https://github.com/mathpunch/didactic-fortnight/raw/refs/heads/main/LEGO%20Star%20Wars%20II.zip';">GBA: Lego Star Wars II</button>
+
+        <h2>MathPunch AI</h2>
+        <button onclick="window.location.href='https://mathpunch.github.io/crab';">Click Me</button>
+
         <h2>Games Requests</h2>
-        <button class="game-button" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc6PG1pB-SmSDqf_gJ_DYWV5HWFtGCcWpgGf2EaS0EpKcICqQ/viewform?usp=sf_link';">Click Me</button>
+        <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc6PG1pB-SmSDqf_gJ_DYWV5HWFtGCcWpgGf2EaS0EpKcICqQ/viewform?usp=sf_link';">Click Me</button>
+
+        <h2>Adblocker</h2>
+        <button onclick="window.location.href='https://www.icloud.com/shortcuts/60f5af18cbfe435f886450e6a4c332e5';">Click Me</button>
+
+        <h2>Chatting</h2>
+        <button onclick="window.location.href='https://sites.google.com/view/mathpunch';">Click Me</button>
+
+        <h2>Backup Links</h2>
+        <button onclick="window.location.href='https://extramath.github.io/';">Click Me</button>
+
+        <h2>New Site Beta</h2>
+        <button onclick="window.location.href='https://mathpunch.us.to/';">Click Me</button>
+
+        <h2>Prank Shortcut</h2>
+        <button onclick="window.location.href='https://www.icloud.com/shortcuts/4e9a1be2aace434981f58226805be72f';">Click Me</button>
     </div>
 
-    <!-- Search Menu -->
-    <div class="search-menu" id="searchMenu">
-        <div class="close-search" onclick="toggleSearchMenu()">❌</div>
-        <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchGames()">
-        <div id="searchResults"></div>
-    </div>
-
-    <!-- Theme Selector -->
+    <!-- Theme selector modal -->
     <div class="theme-selector" id="themeSelector">
         <div class="close-icon" onclick="toggleThemeSelector()">❌</div>
         <h2 id="themeHeader">Select Theme</h2>
@@ -156,76 +184,18 @@
         <button onclick="setTheme('pink')">Pink</button>
     </div>
 
+    <!-- Footer -->
     <footer>
         Made By Ozzy
     </footer>
 
     <script>
-        // Toggle search menu visibility
-        function toggleSearchMenu() {
-            const searchMenu = document.getElementById('searchMenu');
-            searchMenu.style.display = searchMenu.style.display === 'none' || searchMenu.style.display === '' ? 'block' : 'none';
-        }
-
-        // Search functionality
-        function searchGames() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const games = document.querySelectorAll('.game-button');
-            let results = '';
-
-            games.forEach(game => {
-                if (game.textContent.toLowerCase().includes(input)) {
-                    results += `<p>${game.textContent}</p>`;
-                }
-            });
-
-            const searchResults = document.getElementById('searchResults');
-            if (results) {
-                searchResults.innerHTML = `<h3>Results:</h3>${results}`;
-            } else {
-                searchResults.innerHTML = '<p>No results found</p>';
-            }
-        }
-
-        // Toggle theme selector visibility
+        // Toggle the visibility of the theme selector
         function toggleThemeSelector() {
             const themeSelector = document.getElementById('themeSelector');
             themeSelector.style.display = themeSelector.style.display === 'none' || themeSelector.style.display === '' ? 'block' : 'none';
         }
 
-        // Set theme color
-        function setTheme(color) {
-            switch (color) {
-                case 'blue':
-                    document.body.style.backgroundColor = '#007BFF';
-                    break;
-                case 'red':
-                    document.body.style.backgroundColor = '#FF0000';
-                    break;
-                case 'purple':
-                    document.body.style.backgroundColor = '#800080';
-                    break;
-                case 'green':
-                    document.body.style.backgroundColor = '#28A745';
-                    break;
-                case 'yellow':
-                    document.body.style.backgroundColor = '#FFC107';
-                    break;
-                case 'orange':
-                    document.body.style.backgroundColor = '#FFA500';
-                    break;
-                case 'grey':
-                    document.body.style.backgroundColor = '#6c757d';
-                    break;
-                case 'black':
-                    document.body.style.backgroundColor = '#1a1a1a';
-                    break;
-                case 'pink':
-                    document.body.style.backgroundColor = '#FFC0CB';
-                    break;
-            }
-            localStorage.setItem('theme', color);
-        }
-    </script>
-</body>
-</html>
+        // Set the theme
+        function setTheme(theme) {
+            const body
