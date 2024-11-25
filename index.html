@@ -96,7 +96,7 @@
 </head>
 <body>
     <div class="settings-icon" onclick="toggleThemeSelector()">⚙️</div>
-    <h1>Welcome To MathPunch V2</h1>
+    <h1>Welcome To mathpunch V2</h1> <!-- Updated header -->
     <div class="button-container">
         <button onclick="window.location.href='https://mathpunch.github.io/kitty/';">Stickmanhook</button>
         <button onclick="window.location.href='https://mathpunch.github.io/dog/';">Super Mario 64</button>
@@ -111,16 +111,22 @@
         <button onclick="window.location.href='https://mathpunch.github.io/wolf/';">Burrito Bison</button>
         <button onclick="window.location.href='https://mathpunch.github.io/monkey/';">Trash Truck Simulator</button>
 
-        <h2>Games For Emulator JS</h2>
+        <h2>Games For Emulator JS</h2> <!-- Section header -->
         <button onclick="window.location.href='https://github.com/ixlmathgg/flashy/raw/main/Mario%20Kart.zip';">DS: Mario Kart</button>
         <button onclick="window.location.href='https://github.com/ixlmathgg/Licky/raw/main/Pokemon%20Red%20Fire.zip';">GBA: Pokémon Red Fire</button>
         <button onclick="window.location.href='https://github.com/mathpunch/didactic-fortnight/raw/refs/heads/main/LEGO%20Star%20Wars%20II.zip';">GBA: Lego Star Wars II</button>
+        
+        <h2>MathPunch AI</h2> <!-- New section for MathPunch AI -->
+        <button onclick="window.location.href='https://mathpunch.github.io/crab';">Click Me</button>
 
-        <h2>MathPunch AI</h2> <!-- Added the new section -->
-        <button onclick="window.location.href='https://sites.google.com/view/mathpunch';">Click Me</button>
+        <h2>Games Requests</h2>
+        <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc6PG1pB-SmSDqf_gJ_DYWV5HWFtGCcWpgGf2EaS0EpKcICqQ/viewform?usp=sf_link';">Click Me</button>
 
         <h2>Adblocker</h2>
         <button onclick="window.location.href='https://www.icloud.com/shortcuts/60f5af18cbfe435f886450e6a4c332e5';">Click Me</button>
+
+        <h2>Chatting</h2>
+        <button onclick="window.location.href='https://sites.google.com/view/mathpunch';">Click Me</button>
 
         <h2>Backup Links</h2>
         <button onclick="window.location.href='https://extramath.github.io/';">Click Me</button>
@@ -133,8 +139,8 @@
     </div>
 
     <div class="theme-selector" id="themeSelector">
-        <div class="close-icon" onclick="toggleThemeSelector()">❌</div>
-        <h2 id="themeHeader">Select Theme</h2>
+        <div class="close-icon" onclick="toggleThemeSelector()">❌</div> <!-- Close icon -->
+        <h2 id="themeHeader">Select Theme</h2> <!-- Header text -->
         <button onclick="setTheme('blue')">Blue</button>
         <button onclick="setTheme('red')">Red</button>
         <button onclick="setTheme('purple')">Purple</button>
@@ -151,28 +157,14 @@
     </footer>
 
     <script>
-        // Hide the theme selector initially
-        const themeSelector = document.getElementById('themeSelector');
-        themeSelector.style.display = 'none';
-
-        // Toggle theme selector visibility
-        function toggleThemeSelector() {
-            themeSelector.style.display = themeSelector.style.display === 'none' || themeSelector.style.display === '' ? 'block' : 'none';
+        // Check for saved theme on page load
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
         }
 
-        // Set the theme for the page
-        function setTheme(color) {
-            switch (color) {
-                case 'blue':
-                    document.body.style.backgroundColor = '#007BFF';
-                    break;
-                case 'red':
-                    document.body.style.backgroundColor = '#FF0000';
-                    break;
-                case 'purple':
-                    document.body.style.backgroundColor = '#800080';
-                    break;
-                case 'green':
-                    document.body.style.backgroundColor = '#28A745';
-                    break;
-                case
+        function toggleThemeSelector() {
+            const themeSelector = document.getElementById('themeSelector');
+            themeSelector.style.display = themeSelector.style.display === 'none' || themeSelector.style.display === '' ? 'block' : 'none';
+            const header = document.getElementById('themeHeader');
+            header.style.color = 'white';
