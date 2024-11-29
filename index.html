@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MathPunch</title>
     <style>
-        /* Default font for all text except the header */
+        /* Apply font family to the entire body */
         body {
-            font-family: 'Arial', sans-serif; /* Set font for all elements */
+            font-family: 'Arial', sans-serif; /* Apply font to all text */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -21,12 +21,18 @@
         /* Specific style for the "Welcome To mathpunch V2" header */
         h1 {
             margin: 20px 0;
-            font-size: 3em; /* Adjust this if you need it larger or smaller */
+            font-size: 2.5em; /* Make the welcome text a little smaller */
             text-align: center;
             white-space: nowrap;
-            font-family: 'Arial', sans-serif; /* Apply font family for consistency */
+            font-family: 'Arial', sans-serif; /* Ensure font consistency */
         }
 
+        /* Ensure all other text uses the same font */
+        h2, button, footer {
+            font-family: 'Arial', sans-serif; /* Apply the font family */
+        }
+
+        /* Button container styles */
         .button-container {
             display: flex;
             flex-direction: column;
@@ -35,6 +41,7 @@
             max-height: 80vh;
             width: 100%;
         }
+
         button {
             margin: 15px 0;
             background-color: transparent;
@@ -46,13 +53,11 @@
             width: 100%;
             max-width: 300px;
         }
+
         button:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        h2 {
-            margin: 30px 0 15px;
-            font-size: 1.5em;
-        }
+
         footer {
             position: fixed;
             bottom: 0;
