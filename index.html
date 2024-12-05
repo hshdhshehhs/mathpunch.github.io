@@ -16,17 +16,6 @@
             padding-bottom: 60px;
             background-color: #1a1a1a;
             color: white;
-            overflow-x: hidden;
-        }
-
-        /* Ensure particles cover the entire page */
-        #particles-js {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
         }
 
         h1 {
@@ -34,11 +23,6 @@
             font-size: 1.5em;
             text-align: center;
             white-space: nowrap;
-            font-family: 'Arial', sans-serif;
-        }
-
-        h2, button, footer {
-            font-family: 'Arial', sans-serif;
         }
 
         .button-container {
@@ -76,40 +60,33 @@
             background-color: #1a1a1a;
             color: white;
         }
+
+        /* Ensure particles canvas covers the background */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
-    <!-- Particles background -->
     <div id="particles-js"></div>
 
     <h1>Welcome To mathpunch V2</h1>
     <div class="button-container">
-        <!-- Add your buttons here as needed -->
-        <button onclick="window.location.href='https://mathpunch.github.io/lizard/';">Roblox (DOWN)</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/panda/';">BitLife</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/kitty/';">Stickmanhook</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/dog/';">Super Mario 64</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/bear/';">Tiny Fishing</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/snake/';">Tap Tap Shots</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/shark/';">Drive Mad</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/zebra/';">Emulator JS</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/turtle/';">Wordle Unlimited</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/doggy/';">Fruit Ninja</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/fox/';">Rooftop Snipers</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/bat/';">Tunnel Rush</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/wolf/';">Burrito Bison</button>
-        <button onclick="window.location.href='https://mathpunch.github.io/monkey/';">Trash Truck Simulator</button>
-        <!-- Add the remaining buttons similarly -->
+        <!-- Buttons content -->
     </div>
 
     <footer>
         Made By Ozzy
     </footer>
 
-    <!-- Particles.js script -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        particlesJS('particles-js', {
+        particlesJS("particles-js", {
             "particles": {
                 "number": {
                     "value": 200,
@@ -122,37 +99,44 @@
                     "value": "#ffffff"
                 },
                 "shape": {
-                    "type": "circle",
+                    "type": "circle"
                 },
                 "opacity": {
-                    "value": 0.8,
-                    "random": false
+                    "value": 0.7,
+                    "random": true
                 },
                 "size": {
-                    "value": 3,
+                    "value": 5,
                     "random": true
                 },
                 "move": {
                     "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
+                    "speed": 1,
+                    "direction": "bottom",
+                    "straight": false
                 }
             },
             "interactivity": {
-                "detect_on": "canvas",
                 "events": {
                     "onhover": {
                         "enable": true,
-                        "mode": "repulse"
+                        "mode": "bubble"
                     },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "repulse"
+                    }
                 },
                 "modes": {
+                    "bubble": {
+                        "distance": 250,
+                        "size": 8,
+                        "duration": 2,
+                        "opacity": 0.8,
+                        "speed": 3
+                    },
                     "repulse": {
-                        "distance": 100,
-                        "duration": 0.4
+                        "distance": 100
                     }
                 }
             },
