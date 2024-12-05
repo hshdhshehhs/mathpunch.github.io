@@ -61,7 +61,6 @@
             color: white;
         }
 
-        /* Ensure particles canvas covers the background */
         #particles-js {
             position: fixed;
             top: 0;
@@ -77,7 +76,20 @@
 
     <h1>Welcome To mathpunch V2</h1>
     <div class="button-container">
-        <!-- Buttons content -->
+        <button onclick="window.location.href='https://mathpunch.github.io/lizard/';">Roblox (DOWN)</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/panda/';">BitLife</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/kitty/';">Stickmanhook</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/dog/';">Super Mario 64</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/bear/';">Tiny Fishing</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/snake/';">Tap Tap Shots</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/shark/';">Drive Mad</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/zebra/';">Emulator JS</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/turtle/';">Wordle Unlimited</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/doggy/';">Fruit Ninja</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/fox/';">Rooftop Snipers</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/bat/';">Tunnel Rush</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/wolf/';">Burrito Bison</button>
+        <button onclick="window.location.href='https://mathpunch.github.io/monkey/';">Trash Truck Simulator</button>
     </div>
 
     <footer>
@@ -86,61 +98,8 @@
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 200,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle"
-                },
-                "opacity": {
-                    "value": 0.7,
-                    "random": true
-                },
-                "size": {
-                    "value": 5,
-                    "random": true
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 1,
-                    "direction": "bottom",
-                    "straight": false
-                }
-            },
-            "interactivity": {
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "bubble"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "repulse"
-                    }
-                },
-                "modes": {
-                    "bubble": {
-                        "distance": 250,
-                        "size": 8,
-                        "duration": 2,
-                        "opacity": 0.8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 100
-                    }
-                }
-            },
-            "retina_detect": true
+        particlesJS.load('particles-js', 'https://vincentgarreau.com/particles.js/assets/particles.json', function() {
+            console.log('Snow preset loaded.');
         });
     </script>
 </body>
