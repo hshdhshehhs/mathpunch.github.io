@@ -1,0 +1,1 @@
+https://mathpunch.github.io/.well-known/discord.txt
