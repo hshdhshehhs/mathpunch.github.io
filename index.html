@@ -5,20 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MathPunch</title>
     <style>
+        /* Loader styles */
+        .loader {
+            width: 60px;
+            aspect-ratio: 2;
+            --_g: no-repeat radial-gradient(circle closest-side,#fff 90%,#0000); /* White wave dots */
+            background: 
+                var(--_g) 0%   50%,
+                var(--_g) 50%  50%,
+                var(--_g) 100% 50%;
+            background-size: calc(100%/3) 50%;
+            animation: l3 1s infinite linear;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000; /* Pitch black background */
+            z-index: 9999; /* Make sure it covers the whole page */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes l3 {
+            20%{background-position:0%   0%, 50%  50%,100%  50%}
+            40%{background-position:0% 100%, 50%   0%,100%  50%}
+            60%{background-position:0%  50%, 50% 100%,100%   0%}
+            80%{background-position:0%  50%, 50%  50%,100% 100%}
+        }
+
+        /* Hide the body content during the loading screen */
         body {
             font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 0;
-            padding: 0;
+            padding: 20px;
+            padding-bottom: 60px;
             background-color: #1a1a1a;
             color: white;
-            height: 100vh;
-            overflow: hidden; /* Prevent scrolling during loading */
-            position: relative;
+            visibility: hidden; /* Initially hide the content */
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
 
+        /* Rest of the body styles */
         h1 {
             margin: 20px 0;
             font-size: 1.5em;
@@ -26,7 +59,7 @@
             white-space: nowrap;
         }
 
-        h2, button {
+        h2, button, footer {
             font-family: 'Arial', sans-serif;
         }
 
@@ -56,7 +89,7 @@
         }
 
         footer {
-            position: absolute;
+            position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
@@ -64,48 +97,16 @@
             text-align: center;
             background-color: #1a1a1a;
             color: white;
-            visibility: hidden; /* Hide the footer during loading */
-        }
-
-        /* Loader Styles */
-        .loader {
-            width: 60px;
-            aspect-ratio: 2;
-            --_g: no-repeat radial-gradient(circle closest-side, #fff 90%, #0000);
-            background: 
-                var(--_g) 0%   50%,
-                var(--_g) 50%  50%,
-                var(--_g) 100% 50%;
-            background-size: calc(100%/3) 50%;
-            animation: l3 1s infinite linear;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black; /* Set background to black */
-            z-index: 10; /* Ensure loader stays on top */
-        }
-
-        @keyframes l3 {
-            20% {background-position: 0% 0%, 50% 50%, 100% 50%}
-            40% {background-position: 0% 100%, 50% 0%, 100% 50%}
-            60% {background-position: 0% 50%, 50% 100%, 100% 0%}
-            80% {background-position: 0% 50%, 50% 50%, 100% 100%}
-        }
-
-        /* Hide content initially */
-        .hidden {
-            visibility: hidden;
         }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loader" id="loader"></div>
+    <!-- Loader Div -->
+    <div class="loader"></div>
 
+    <!-- Page content -->
     <h1>Welcome To MathPunch V2</h1>
-    <div class="button-container hidden" id="content">
+    <div class="button-container">
         <h2>Games</h2>
         <button onclick="window.location.href='https://mathpunch.github.io/grasshopper/';">Roblox</button>
         <button onclick="window.location.href='https://mathpunch.github.io/panda/';">BitLife</button>
@@ -160,21 +161,23 @@
         <button onclick="window.location.href='https://extramath.github.io/';">Click Me</button>
 
         <h2>Prank Shortcut</h2>
-        <button onclick="window.location.href='https://www.icloud.com/shortcuts/4e9a1be2aace434981f5822681eb8e6d';">Click Me</button>
+        <button onclick="window.location.href='https://www.icloud.com/shortcuts/4e9a1be2aace434981f58226805be72f';">Click Me</button>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 MathPunch. All rights reserved.</p>
+        Made By Ozzy
     </footer>
 
     <script>
-        // Show content after 2 seconds
-        setTimeout(() => {
-            document.getElementById('loader').style.display = 'none';
-            document.getElementById('content').classList.remove('hidden');
-            document.querySelector('footer').style.visibility = 'visible'; // Show footer after loading
-        }, 2000);
+        // When the page is fully loaded, remove the loader after 2 seconds
+        window.onload = function() {
+            setTimeout(function() {
+                const loader = document.querySelector('.loader');
+                loader.style.display = 'none'; // Hide loader
+                document.body.style.visibility = 'visible'; // Reveal the page content
+                document.body.style.opacity = '1'; // Fade in the content
+            }, 2000); // Loader stays for 2 seconds
+        };
     </script>
 </body>
 </html>
