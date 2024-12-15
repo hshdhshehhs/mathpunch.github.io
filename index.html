@@ -9,30 +9,30 @@
         .loader {
             width: 60px;
             aspect-ratio: 2;
-            --_g: no-repeat radial-gradient(circle closest-side,#fff 90%,#0000); /* White wave dots */
+            --_g: no-repeat radial-gradient(circle closest-side, #fff 90%, #0000); /* White wave dots */
             background: 
                 var(--_g) 0%   50%,
                 var(--_g) 50%  50%,
                 var(--_g) 100% 50%;
-            background-size: calc(100%/3) 50%;
+            background-size: calc(100% / 3) 50%;
             animation: l3 1s infinite linear;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #000; /* Pitch black background */
-            z-index: 9999; /* Make sure it covers the whole page */
+            background-color: #000; /* Black background */
+            z-index: 9999; /* Make sure loader covers everything */
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         @keyframes l3 {
-            20%{background-position:0%   0%, 50%  50%,100%  50%}
-            40%{background-position:0% 100%, 50%   0%,100%  50%}
-            60%{background-position:0%  50%, 50% 100%,100%   0%}
-            80%{background-position:0%  50%, 50%  50%,100% 100%}
+            20% { background-position: 0% 0%, 50% 50%, 100% 50%; }
+            40% { background-position: 0% 100%, 50% 0%, 100% 50%; }
+            60% { background-position: 0% 50%, 50% 100%, 100% 0%; }
+            80% { background-position: 0% 50%, 50% 50%, 100% 100%; }
         }
 
         /* Hide the body content during the loading screen */
@@ -51,7 +51,6 @@
             transition: opacity 1s ease-in-out;
         }
 
-        /* Rest of the body styles */
         h1 {
             margin: 20px 0;
             font-size: 1.5em;
@@ -98,6 +97,12 @@
             background-color: #1a1a1a;
             color: white;
         }
+
+        /* Style for fade-in effect */
+        .fade-in {
+            opacity: 1;
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
@@ -127,56 +132,23 @@
         <button onclick="window.location.href='https://github.com/ixlmathgg/flashy/raw/main/Mario%20Kart.zip';">DS: Mario Kart</button>
         <button onclick="window.location.href='https://github.com/ixlmathgg/Licky/raw/main/Pokemon%20Red%20Fire.zip';">GBA: Pokémon Red Fire</button>
         <button onclick="window.location.href='https://github.com/mathpunch/didactic-fortnight/raw/refs/heads/main/LEGO%20Star%20Wars%20II.zip';">GBA: Lego Star Wars II</button>
-
-        <!-- Proxy Section -->
-        <h2>Proxy</h2>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); window.location.href='http://campus.rocketpride.com';">Server 1</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); window.location.href='http://classroom.rocketpride.com';">Server 2</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); window.location.href='http://library.rocketpride.com';">Server 3</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); window.location.href='http://portal.rocketpride.com';">Server 4</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); window.location.href='http://scholar.rocketpride.com';">Server 5</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); window.location.href='http://academy.rocketpride.com';">Server 6</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); window.location.href='http://learn.rocketpride.com';">Server 7</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); window.location.href='http://projects.rocketpride.com';">Server 8</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); window.location.href='http://resources.rocketpride.com';">Server 9</button>
-        <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); window.location.href='http://studyhub.rocketpride.com';">Server 10</button>
-
-        <!-- Extra Section -->
-        <h2>Extra</h2>
-        <button onclick="window.location.href='https://auditor.rocketpride.com';">Another Unblocked Game Website</button>
-
-        <h2>MathPunch AI</h2>
-        <button onclick="window.location.href='https://mathpunch.github.io/crab';">Click Me</button>
-
-        <h2>Games Requests</h2>
-        <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc6PG1pB-SmSDqf_gJ_DYWV5HWFtGCcWpgGf2EaS0EpKcICqQ/viewform?usp=sf_link';">Click Me</button>
-
-        <h2>Adblocker</h2>
-        <button onclick="window.location.href='https://www.icloud.com/shortcuts/60f5af18cbfe435f886450e6a4c332e5';">Click Me</button>
-
-        <h2>Chatting</h2>
-        <button onclick="window.location.href='https://sites.google.com/view/mathpunch';">Click Me</button>
-
-        <h2>Backup Links</h2>
-        <button onclick="window.location.href='https://extramath.github.io/';">Click Me</button>
-
-        <h2>Prank Shortcut</h2>
-        <button onclick="window.location.href='https://www.icloud.com/shortcuts/4e9a1be2aace434981f58226805be72f';">Click Me</button>
+        <!-- Add more buttons here -->
     </div>
 
     <footer>
         Made By Ozzy
     </footer>
 
+    <!-- JavaScript to hide the loader and show the content after 2 seconds -->
     <script>
-        // When the page is fully loaded, remove the loader after 2 seconds
         window.onload = function() {
             setTimeout(function() {
-                const loader = document.querySelector('.loader');
-                loader.style.display = 'none'; // Hide loader
-                document.body.style.visibility = 'visible'; // Reveal the page content
-                document.body.style.opacity = '1'; // Fade in the content
-            }, 2000); // Loader stays for 2 seconds
+                // Hide the loader
+                document.querySelector('.loader').style.display = 'none';
+                
+                // Show the content with a fade-in effect
+                document.body.classList.add('fade-in');
+            }, 2000); // Set delay to 2 seconds
         };
     </script>
 </body>
