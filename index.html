@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MathPunch</title>
     <style>
+        /* Loading screen styles */
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 2s ease;
+        }
+
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.1); /* Light grey border */
+            border-left-color: transparent;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Fade out animation */
+        #loadingScreen.fadeOut {
+            opacity: 0;
+            pointer-events: none;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             display: flex;
@@ -63,48 +103,12 @@
             background-color: #1a1a1a;
             color: white;
         }
-
-        /* Loading screen styles */
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        #loading-screen span {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            border-top: 5px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        #loading-screen.hidden {
-            display: none;
-        }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <span></span>
+    <!-- Loading screen -->
+    <div id="loadingScreen">
+        <div class="loader"></div>
     </div>
 
     <h1>Welcome To MathPunch V2</h1>
@@ -171,10 +175,11 @@
     </footer>
 
     <script>
-        // Hide loading screen when the page content is fully loaded
-        window.onload = function () {
-            // Hide the loading screen
-            document.getElementById('loading-screen').style.display = 'none';
+        // Fade out the loading screen after 2 seconds
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('loadingScreen').classList.add('fadeOut');
+            }, 2000); // Wait for 2 seconds and then fade out
         };
     </script>
 </body>
