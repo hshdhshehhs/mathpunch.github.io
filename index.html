@@ -171,9 +171,10 @@
     </footer>
 
     <script>
-        // Hide loading screen when content is loaded
+        // Hide loading screen when the page content is fully loaded
         window.onload = function () {
-            document.getElementById('loading-screen').classList.add('hidden');
+            // Hide the loading screen
+            document.getElementById('loading-screen').style.display = 'none';
         };
     </script>
 </body>
