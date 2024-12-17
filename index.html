@@ -21,7 +21,7 @@
             transition: opacity 2s ease; /* Fade-out transition */
         }
 
-        /* New loader animation */
+        /* New loader animation - fixed size */
         .loader {
             width: 48px;
             height: 48px;
@@ -40,7 +40,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            animation: animloader 2s linear infinite;
+            animation: animloader 2s infinite ease-in-out;
         }
 
         .loader::after {
@@ -49,11 +49,9 @@
 
         @keyframes animloader {
             0% {
-                transform: scale(0);
                 opacity: 1;
             }
             100% {
-                transform: scale(1);
                 opacity: 0;
             }
         }
@@ -157,7 +155,6 @@
         <!-- Proxy Section -->
         <h2>Proxy</h2>
         <button onclick="alert('A Proxy is A Website That You Can Go On Almost Any Websites'); window.location.href='http://campus.rocketpride.com';">Server 1</button>
-        <!-- Additional proxy buttons unchanged -->
         
         <h2>Extra</h2>
         <button onclick="window.location.href='https://auditor.rocketpride.com';">Another Unblocked Game Website</button>
@@ -165,9 +162,6 @@
 
         <h2>MathPunch AI</h2>
         <button onclick="window.location.href='https://mathpunch.github.io/crab';">Click Me</button>
-
-        <h2>Games Requests</h2>
-        <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc6PG1pB-SmSDqf_gJ_DYWV5HWFtGCcWpgGf2EaS0EpKcICqQ/viewform?usp=sf_link';">Click Me</button>
     </div>
 
     <footer>
