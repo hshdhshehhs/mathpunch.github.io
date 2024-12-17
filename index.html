@@ -21,45 +21,16 @@
             transition: opacity 2s ease; /* Fade-out transition */
         }
 
-        /* Loader style */
         .loader {
-            width: 48px;
-            height: 48px;
-            display: inline-block;
-            position: relative;
-            animation: fadeOut 2s ease forwards; /* Add fade-out animation */
-        }
-
-        .loader::after,
-        .loader::before {
-            content: '';  
-            box-sizing: border-box;
-            width: 48px;
-            height: 48px;
+            width: 36px;
+            height: 36px;
+            border: 4px solid transparent; /* No border color other than the rotating line */
+            border-top: 4px solid white; /* Only the white top border */
             border-radius: 50%;
-            border: 2px solid #FFF;
-            position: absolute;
-            left: 0;
-            top: 0;
-            animation: animloader 2s linear infinite;
+            animation: spin 1s linear infinite;
         }
 
-        .loader::after {
-            animation-delay: 1s;
-        }
-
-        /* Fade-out animation */
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
-        /* Spinning animation */
-        @keyframes animloader {
+        @keyframes spin {
             0% {
                 transform: rotate(0deg);
             }
@@ -68,7 +39,12 @@
             }
         }
 
-        /* Body and other styles */
+        /* Fade out animation */
+        #loadingScreen.fadeOut {
+            opacity: 0;
+            pointer-events: none;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             display: flex;
@@ -175,7 +151,6 @@
         <!-- Extra Section -->
         <h2>Extra</h2>
         <button onclick="window.location.href='https://auditor.rocketpride.com';">Another Unblocked Game Website</button>
-        <button onclick="window.location.href='https://literate-halibut-r4r95wvr556v2wv79-5503.app.github.dev/static/';">MathPunch Official Proxy</button>
 
         <h2>MathPunch AI</h2>
         <button onclick="window.location.href='https://mathpunch.github.io/crab';">Click Me</button>
